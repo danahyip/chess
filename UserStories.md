@@ -15,3 +15,5 @@ US007 - As a player, I would like to be able to choose the number of players at 
 US008 - As a player, I would like to be able to edit the player name so that I can see who is playing.
 
 US009 - As a developer, I would like the code to have formatted documentation so that it is easier to maintain.
+
+US010 - As a player, I would like to see  highlights of the previous move so that I can better keep track of the game.
