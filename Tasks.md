@@ -13,3 +13,7 @@
 @anchor T9_2 \imp \ref US009 Task009.2 - Add ability to add links in documentation to relevant tasks - 1 point
 
 @anchor T9_3 \imp \ref US009 Task009.3 - Add ability to link tasks to relevant User Stories - 1 point
+
+@anchor T10_1 \imp pref US010 Task 010.1 Determine method for marking previous move - 1 point
+
+@anchor T10_1 \imp pref US010 Task 010.1 Demonstrate ability to mark previous move - 3 points
