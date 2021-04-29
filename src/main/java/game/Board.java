@@ -365,7 +365,10 @@ public class Board extends JPanel {
             return true;
         }
         
-                 
+        /** 
+         * This method increments the counter of black and white.
+         * @return void
+         */
         private void noOfMoves(){
             int whiteTurn=noOfMovesWhite;
             int blackTurn=noOfMovesBlack;
@@ -384,7 +387,12 @@ public class Board extends JPanel {
         
     }
 
-    
+    /**
+     * This method creates and start new frame with their different functionalities.
+     * @param whiteTurn   first parameter to display white moves in new frame.
+     * @param blackTurn   second parameter to display black moves in new frame.
+     * @return void
+     */
     private void newFrame(int whiteTurn,int blackTurn){
             Main newGameFrame = new Main();
             try{
@@ -419,6 +427,10 @@ public class Board extends JPanel {
             }
     }
     
+    /**
+     * This function use to calculate time of the timer.
+     * @return void
+     */
     private void timer(){
         DecimalFormat df = new DecimalFormat("00");
         timer = new Timer(1000,new ActionListener(){

@@ -31,6 +31,10 @@ public class Main extends JFrame {
             this.setLocationRelativeTo( null );
         }
         
+        /** 
+         * This method starts new game.
+         * @return void
+         */
         public void newGame() throws Exception{
             Main main = new Main();
             main.setVisible(true);

@@ -19,6 +19,13 @@ public class Queen extends Figure {
      * @param field to display queen on a board.
      * Change icons for queen_black and queen_white.
      */
+    
+    /***
+     * @param x it sets x coordinate.
+     * @param y it sets y coordinate.
+     * @param black true if black.
+     * @param field to display rook on a board. Change icons for rook_black and rook_white.
+     */
     public Queen(int x, int y, boolean black, Field field) {
         super(x, y, black, field);
         if (black) {
