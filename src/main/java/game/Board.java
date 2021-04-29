@@ -385,7 +385,7 @@ public class Board extends JPanel {
     }
 
     private void newFrame(int whiteTurn,int blackTurn){
-        
+        Main newGameFrame = new Main();
         label.setText("Black:  "+blackTurn+"    "+"White:  "+whiteTurn);
         label.setBounds(50,50, 150,20);
         resetButton.setBounds(50,250,95,30);
@@ -393,7 +393,14 @@ public class Board extends JPanel {
         resetButton.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        System.out.println("Listener added");
+                        try{
+                            ++r;
+                            if(r==1){
+                                System.out.println("new game");
+                            }
+                        }catch(Exception ex){
+                            System.out.println("Exception occured in reset button "+ex.getMessage());
+                        }
                     }
                 });
         movesFrame.add(timeLabel);
