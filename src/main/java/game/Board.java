@@ -361,7 +361,7 @@ public class Board extends JPanel {
         private void noOfMoves(){
             int whiteTurn=noOfMovesWhite;
             int blackTurn=noOfMovesBlack;
-            System.out.println("Moves function");
+            System.out.println("Movees function");
             newFrame(whiteTurn,blackTurn);
         }
     }
