@@ -7,4 +7,4 @@ Tasks are found in Tasks.md
 
 Design document was automatically generated using Doxygen
 
-Testing done using JUnit
+Test packages created using JUnit
