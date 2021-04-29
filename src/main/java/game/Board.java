@@ -32,6 +32,10 @@ public class Board extends JPanel {
 
     private boolean isSelected = false;
 
+    JButton resetButton=new JButton("Reset"); /**<Reset button object created.*/
+    JLabel timeLabel = new JLabel("Timer"); /**<Label for a timer.*/
+
+    
     public Board() throws IOException {
 
         this.initBoard();
@@ -172,6 +176,7 @@ public class Board extends JPanel {
              */
             if (field.getFigure() != null && isWhitesTurn != field.getFigure().getIsBlack()) {
                 this.setCheckedFalse();
+                
                 this.removeMarker();
                 oldField = field;
                 isSelected = true;
