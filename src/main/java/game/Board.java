@@ -398,7 +398,6 @@ public class Board extends JPanel {
                             ++r;
                             if(r==1){
                                 newGameFrame.newGame();
-                                timer.stop();
                                 movesFrame.setVisible(false);
                             }
                         }catch(Exception ex){
@@ -416,9 +415,6 @@ public class Board extends JPanel {
             }
     }
 
-    
-    
-    
     
     public Field[][] getArrayChessBoard() {
         return arrayBoard;
