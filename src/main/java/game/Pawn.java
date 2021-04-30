@@ -20,6 +20,9 @@ public class Pawn extends Figure {
      * @param field to display pawn on a board.
      * Change icons for pawn_black and pawn_white.
      */
+    /*
+    \ref T4_2
+    */
     public Pawn(int x, int y, boolean black, Field field) {
         super(x, y, black, field);
         if (isBlack) {
