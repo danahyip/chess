@@ -20,13 +20,6 @@ public class King extends Figure {
      * @param field to display king on a board.
      * Change icons for king_black and king_white.
      */
-    
-    /***
-     * @param x it sets x coordinate.
-     * @param y it sets y coordinate.
-     * @param black true if black.
-     * @param field to display rook on a board. Change icons for rook_black and rook_white.
-     */
     public King(int x, int y, boolean black, Field field) {
         super(x, y, black, field);
         if (black) {
