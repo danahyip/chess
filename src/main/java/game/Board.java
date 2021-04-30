@@ -399,7 +399,7 @@ public class Board extends JPanel {
      * @param blackTurn   second parameter to display black moves in new frame.
      * @return void
      */
-    private void newFrame(int whiteTurn,int blackTurn){
+    private void newFrame(int whiteTurn,int blackTurn){/*\ref T20_2 */
             Main newGameFrame = new Main();/*\ref T20_1 */
             try{
                 label.setText("Black:  "+blackTurn+"    "+"White:  "+whiteTurn);
