@@ -36,6 +36,7 @@ public class Board extends JPanel {
     private boolean isSelected = false;
     
     JFrame movesFrame = new JFrame("No. of Moves");  /**<New Frame for counter and reset functionality.*/
+
     JLabel label = new JLabel(); /**<Label for printing moves counter.*/
     JButton resetButton=new JButton("Reset"); /**<Reset button object created.*/
     JLabel timeLabel = new JLabel("Timer"); /**<Label for a timer.*/
@@ -46,7 +47,9 @@ public class Board extends JPanel {
     
     Timer timer; /**<Reference variable for timer */
 
-    public Board() throws IOException {
+    public Board(boolean onePlayer) throws IOException {
+
+        this.onePlayer = onePlayer;
 
         this.initBoard();
     }
@@ -397,3 +400,4 @@ public class Board extends JPanel {
         }
     }
 }
+
