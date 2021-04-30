@@ -19,6 +19,27 @@ import javax.swing.JLabel;
  */
 public class Main extends JFrame {
         public Main() {
+
+
+            /// \ref T7_1 Popup will ask users to choose the number of players
+            int playerChoice = getNumberOfPlayers();
+            
+            if(playerChoice == 1) {
+                startOnePlayer();
+            }
+            else {
+                startTwoPlayer();
+            }
+            
+        }
+
+        public void startOnePlayer() {
+            System.out.println("TODO");
+            }
+        
+
+        public void startTwoPlayer() {
+
             try {
                 this.add( new Board());
             } catch (IOException ex) {
