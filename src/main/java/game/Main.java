@@ -23,7 +23,8 @@ import javax.swing.JPanel;
 public class Main extends JFrame {
     
         public Main() {
-            /// /ref Task007.2 Popup will ask users to choose the number of players
+
+            /// \ref T7_1 Popup will ask users to choose the number of players
             int playerChoice = getNumberOfPlayers();
             
             if(playerChoice == 1) {
@@ -53,7 +54,7 @@ public class Main extends JFrame {
             this.setLocationRelativeTo( null );
         }
         
-        /// /ref Task007.1 Popup for users to choose number of players 
+        /// \ref T7_2 Popup for users to choose number of players 
         //will return 1 for One player, 2 for Two player
         public int getNumberOfPlayers() {
             String[] options = {"1 Player", "2 Players"};
