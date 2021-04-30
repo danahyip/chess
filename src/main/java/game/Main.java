@@ -19,33 +19,16 @@ import javax.swing.JLabel;
  */
 public class Main extends JFrame {
         public Main() {
-
-
+            
             /// \ref T7_1 Popup will ask users to choose the number of players
-            int playerChoice = getNumberOfPlayers();
+            boolean onePlayer = isOnePlayerGame();
             
-            if(playerChoice == 1) {
-                startOnePlayer();
-            }
-            else {
-                startTwoPlayer();
-            }
-            
-        }
-
-        public void startOnePlayer() {
-            System.out.println("TODO");
-            }
-        
-
-        public void startTwoPlayer() {
-
             try {
-                this.add( new Board());
+                this.add( new Board(onePlayer));
             } catch (IOException ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             }
-            //this.setSize(10000,10000);
+
             this.pack();
             this.setResizable(false);
             this.setTitle( "CHESS" );
@@ -53,6 +36,22 @@ public class Main extends JFrame {
             this.setLocationRelativeTo( null );
         }
         
+
+        /// \ref T7_2 Popup for users to choose number of players 
+        //will return 1 for One player, 2 for Two player
+        public int getNumberOfPlayers() {
+            String[] options = {"1 Player", "2 Players"};
+            int playerChoice = JOptionPane.showOptionDialog(null, "Please choose number of Players",
+                "How Many Players?",
+                JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+            if (playerChoice == 0) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    
         public static void main(String[] args) {
             EventQueue.invokeLater(() -> {
                 Main main = new Main();

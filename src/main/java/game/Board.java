@@ -29,6 +29,7 @@ public class Board extends JPanel {
     Field oldField = null;
     int saveYCoord;
     int saveXCoord;
+    boolean onePlayer;
     boolean isWhitesTurn = true;
     InformationBoard infoBoard;
     Field collisionField;
@@ -46,20 +47,26 @@ public class Board extends JPanel {
     
     Timer timer; /**<Reference variable for timer */
 
-    public Board() throws IOException {
+     public Board(boolean onePlayer) throws IOException {
 
+        this.onePlayer = onePlayer;
         this.initBoard();
     }
 
     private void initBoard() {
 
         this.setSize(800, 800);
-        
+
         BoardListener boardlistener = new BoardListener();
         arrayBoard = new Field[8][8];
         destroyedFiguresList = new ArrayList<>();
         blackFiguresList = new ArrayList<>();
         whiteFiguresList = new ArrayList<>();
+
+      if(onePlayer) {
+            opponent = new Opponent(arrayBoard);
+        }
+
 
         this.setLayout(new java.awt.GridLayout(8, 8));
         boolean black = true;
@@ -253,7 +260,16 @@ public class Board extends JPanel {
                         System.exit(0);
                     }
                 }
-                isWhitesTurn = !isWhitesTurn;
+
+                //if playing against computer, have them takeTurn
+                if(onePlayer) {
+                    opponent.takeTurn(blackFiguresList, whiteFiguresList);
+                }
+                //otherwise, switch which player's turn it is
+                else {
+                    isWhitesTurn = !isWhitesTurn;
+                }
+
             }
         }
 
@@ -266,7 +282,7 @@ public class Board extends JPanel {
                     Field localField = arrayBoard[xCoord][yCoord];
 
                     localField.setStandartColor();
-                    
+
                 }
             }
         }
@@ -364,8 +380,7 @@ public class Board extends JPanel {
 
             return true;
         }
-        
-                 
+
         private void noOfMoves(){
             int whiteTurn=noOfMovesWhite;
             int blackTurn=noOfMovesBlack;
@@ -375,16 +390,13 @@ public class Board extends JPanel {
     }
 
     private void newFrame(int whiteTurn,int blackTurn){
-        
+
 
         System.out.println("Function add new frame");
         movesFrame.setSize(400,400);
         movesFrame.setVisible(true);
     }
-    
-    
-    
-    
+
     public Field[][] getArrayChessBoard() {
         return arrayBoard;
     }
