@@ -28,7 +28,9 @@ public class Pawn extends Figure {
             imagePath = "/pawn_white.png";
         }
     }
-
+/*
+\ref T4_1
+*/
     public void setWasMoved(boolean wasMoved) {
         this.wasMoved = wasMoved;
     }
