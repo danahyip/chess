@@ -6,6 +6,7 @@ game\Bishop.class
 game\CheckmatedChecker.class
 game\Pawn.class
 game\Main.class
+game\Board$2.class
 game\Knight.class
 game\Figure.class
 game\InformationBoard.class

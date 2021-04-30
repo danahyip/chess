@@ -35,16 +35,21 @@ public class Board extends JPanel {
 
     private boolean isSelected = false;
     
-    JFrame movesFrame = new JFrame("No. of Moves");  /**<New Frame for counter and reset functionality.*/
+    JFrame movesFrame = new JFrame("No. of Moves");  /**< \ref T3_1
+    New Frame for counter and reset functionality.*/
     JLabel label = new JLabel(); /**<Label for printing moves counter.*/
     JButton resetButton=new JButton("Reset"); /**<Reset button object created.*/
     JLabel timeLabel = new JLabel("Timer"); /**<Label for a timer.*/
-    int r=0; /**<Default data member r for some logic in the code.*/    
+    int r=0; /**<Default data member r for some logic in the code.*/
     int second=0; /**<Data member for seconds count. */
     int minute=30;/**<Data member for minutes count.*/
     String dfseconds, dfminutes; /**<Data members use for formating.*/
     
     Timer timer; /**<Reference variable for timer */
+    
+
+    
+
 
     public Board() throws IOException {
 
@@ -160,6 +165,7 @@ public class Board extends JPanel {
 
     }
 
+    /* \ref T3_1 */
     private class BoardListener implements java.awt.event.ActionListener {
 
         /*
@@ -167,7 +173,6 @@ public class Board extends JPanel {
          */
         int noOfMovesBlack = 0; /**<Data member to count no. of moves by black.*/
         int noOfMovesWhite = 0; /**<Data member to count no. of moves by white.*/
-
         public void actionPerformed(java.awt.event.ActionEvent event) {
 
             for (int yCoord = 0; yCoord < arrayBoard.length; yCoord++) {
@@ -365,26 +370,105 @@ public class Board extends JPanel {
             return true;
         }
         
-                 
+        /** 
+         * This method increments the counter of black and white.
+         * @return void
+         */
         private void noOfMoves(){
             int whiteTurn=noOfMovesWhite;
             int blackTurn=noOfMovesBlack;
-            System.out.println("Movees function");
+            if(isWhitesTurn){
+                ++noOfMovesWhite;
+                whiteTurn = noOfMovesWhite;
+                System.out.println("Total Number of moves by white = "+noOfMovesWhite);
+                
+            }else{
+                ++noOfMovesBlack;
+                blackTurn = noOfMovesBlack;
+                System.out.println("Total Number of moves by black = "+noOfMovesBlack);
+            }
             newFrame(whiteTurn,blackTurn);
         }
-    }
-
-    private void newFrame(int whiteTurn,int blackTurn){
         
-
-        System.out.println("Function add new frame");
-        movesFrame.setSize(400,400);
-        movesFrame.setVisible(true);
     }
-    
-    
-    
-    
+
+    /**
+    \ref T3_4
+     * This method creates and start new frame with their different functionalities.
+     * @param whiteTurn   first parameter to display white moves in new frame.
+     * @param blackTurn   second parameter to display black moves in new frame.
+     * @return void
+     */
+    private void newFrame(int whiteTurn,int blackTurn){/*\ref T20_2 */
+            Main newGameFrame = new Main();/*\ref T20_1 */
+            try{
+                label.setText("Black:  "+blackTurn+"    "+"White:  "+whiteTurn);
+                label.setBounds(50,50, 150,20);
+                resetButton.setBounds(50,250,95,30);
+                timeLabel.setBounds(50, 50, 200, 100);
+                resetButton.addActionListener(new ActionListener() {/*\ref T20_4 */
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        try{
+                            ++r;
+                            if(r==1){
+                                newGameFrame.newGame();
+                                timer.stop();/* \ref T5_3*/
+                                movesFrame.setVisible(false);
+                            }
+                        }catch(Exception ex){
+                            System.out.println("Exception occured in reset button "+ex.getMessage());
+                        }
+                    }
+                });
+                /* 
+                \ref T3_3
+                */
+                movesFrame.add(timeLabel);
+                movesFrame.add(resetButton);
+                movesFrame.add(label);
+                movesFrame.setSize(400,400);
+                movesFrame.setVisible(true);
+                timer();/*\ref T5_2 */
+                timer.start();
+            }catch(Exception e){
+                System.out.println("Exception Occured! Something is wrong in new Frame.. "+e.getMessage());
+            }
+    }
+    /* 
+    \ref T5_1
+    */
+    /**
+     * This function use to calculate time of the timer.
+     * @return void
+     */
+    private void timer(){
+        DecimalFormat df = new DecimalFormat("00");
+        timer = new Timer(1000,new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                second--;
+                dfseconds = df.format(second);
+                dfminutes = df.format(minute);
+                if(second==-1){
+                    second=59;
+                    minute--;
+                    timeLabel.setText(dfminutes+":"+dfseconds);
+                }
+                else{
+                    timeLabel.setText(dfminutes+":"+dfseconds);
+                }
+                if(minute==0 && second==0){
+                    timer.stop();
+                    System.out.println("Time out!! Game Over.");
+                    System.exit(0);
+                }
+            }
+            
+        });
+    }
+
+        
     public Field[][] getArrayChessBoard() {
         return arrayBoard;
     }
