@@ -36,7 +36,6 @@ public class Main extends JFrame {
             Main main = new Main();
             main.setVisible(true);
         }
-
         public static void main(String[] args) {
             EventQueue.invokeLater(() -> {
                 Main main = new Main();
