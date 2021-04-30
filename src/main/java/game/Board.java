@@ -35,7 +35,8 @@ public class Board extends JPanel {
 
     private boolean isSelected = false;
     
-    JFrame movesFrame = new JFrame("No. of Moves");  /**<New Frame for counter and reset functionality.*/
+    JFrame movesFrame = new JFrame("No. of Moves");  /**< \ref T3_1
+    New Frame for counter and reset functionality.*/
     JLabel label = new JLabel(); /**<Label for printing moves counter.*/
     JButton resetButton=new JButton("Reset"); /**<Reset button object created.*/
     JLabel timeLabel = new JLabel("Timer"); /**<Label for a timer.*/
@@ -164,6 +165,7 @@ public class Board extends JPanel {
 
     }
 
+    /* \ref T3_1 */
     private class BoardListener implements java.awt.event.ActionListener {
 
         /*
@@ -391,6 +393,7 @@ public class Board extends JPanel {
     }
 
     /**
+    \ref T3_4
      * This method creates and start new frame with their different functionalities.
      * @param whiteTurn   first parameter to display white moves in new frame.
      * @param blackTurn   second parameter to display black moves in new frame.
@@ -418,6 +421,9 @@ public class Board extends JPanel {
                         }
                     }
                 });
+                /* 
+                \ref T3_3
+                */
                 movesFrame.add(timeLabel);
                 movesFrame.add(resetButton);
                 movesFrame.add(label);
