@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -5,25 +6,19 @@
  */
 package game;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 /**
  *
  * @author gersc
  */
 public class Main extends JFrame {
-    
         public Main() {
-
             
             /// \ref T7_1 Popup will ask users to choose the number of players
             boolean onePlayer = isOnePlayerGame();
@@ -58,12 +53,11 @@ public class Main extends JFrame {
         }
     
         public static void main(String[] args) {
-            
             EventQueue.invokeLater(() -> {
                 Main main = new Main();
-                main.setVisible( true );
+                main.setVisible(true);
             });
             
         }
-    
+        
 }
