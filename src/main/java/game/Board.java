@@ -406,7 +406,7 @@ public class Board extends JPanel {
                 label.setBounds(50,50, 150,20);
                 resetButton.setBounds(50,250,95,30);
                 timeLabel.setBounds(50, 50, 200, 100);
-                resetButton.addActionListener(new ActionListener() {
+                resetButton.addActionListener(new ActionListener() {/*\ref T20_4 */
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         try{
