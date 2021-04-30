@@ -400,7 +400,7 @@ public class Board extends JPanel {
      * @return void
      */
     private void newFrame(int whiteTurn,int blackTurn){
-            Main newGameFrame = new Main();
+            Main newGameFrame = new Main();/*\ref T20_1 */
             try{
                 label.setText("Black:  "+blackTurn+"    "+"White:  "+whiteTurn);
                 label.setBounds(50,50, 150,20);
