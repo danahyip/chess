@@ -6,7 +6,10 @@
 package game;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import javax.swing.*;
@@ -26,13 +29,15 @@ public class Board extends JPanel {
     Field oldField = null;
     int saveYCoord;
     int saveXCoord;
-    boolean isWhitesTurn = true;
     boolean onePlayer;
+    boolean isWhitesTurn = true;
     InformationBoard infoBoard;
     Field collisionField;
-    Opponent opponent = null;
 
     private boolean isSelected = false;
+    
+    JFrame movesFrame = new JFrame("No. of Moves");  /**<New Frame for counter and reset functionality.*/
+    
 
     public Board(boolean onePlayer) throws IOException {
 
@@ -43,14 +48,14 @@ public class Board extends JPanel {
     private void initBoard() {
 
         this.setSize(800, 800);
-
+        
         BoardListener boardlistener = new BoardListener();
         arrayBoard = new Field[8][8];
         destroyedFiguresList = new ArrayList<>();
         blackFiguresList = new ArrayList<>();
         whiteFiguresList = new ArrayList<>();
-        
-        if(onePlayer) {
+      
+      if(onePlayer) {
             opponent = new Opponent(arrayBoard);
         }
 
@@ -158,6 +163,9 @@ public class Board extends JPanel {
         /*
          * Executed when a field is pressed
          */
+        int noOfMovesBlack = 0; /**<Data member to count no. of moves by black.*/
+        int noOfMovesWhite = 0; /**<Data member to count no. of moves by white.*/
+
         public void actionPerformed(java.awt.event.ActionEvent event) {
 
             for (int yCoord = 0; yCoord < arrayBoard.length; yCoord++) {
@@ -173,7 +181,6 @@ public class Board extends JPanel {
             }
 
             printActivePlayer();
-
             /*
              * Executed when a pushed friendly unit is on it or the field is empty and no unit is selected
              */
@@ -215,14 +222,9 @@ public class Board extends JPanel {
              * Executed when a unit is selected and the pushed field is valid
              */ else if (isSelected && oldField.getFigure().isMoveValid(field)) {
                 this.removeMarker();
+                this.noOfMoves();  /**<Number of moves function called.*/
                 if (field.getFigure() != null) {
                     destroyedFiguresList.add(field.getFigure());
-                    if(field.getFigure().isBlack) {
-                        blackFiguresList.remove(field.getFigure());
-                    }
-                    else {
-                        whiteFiguresList.remove(field.getFigure());
-                    }
                 }
                 oldField.getFigure().removeTexture();
                 if (oldField.getFigure() instanceof Pawn) {
@@ -249,7 +251,7 @@ public class Board extends JPanel {
                         System.exit(0);
                     }
                 }
-                
+               
                 //if playing against computer, have them takeTurn
                 if(onePlayer) {
                     opponent.takeTurn(blackFiguresList, whiteFiguresList);
@@ -258,7 +260,6 @@ public class Board extends JPanel {
                 else {
                     isWhitesTurn = !isWhitesTurn;
                 }
-                
             }
         }
 
@@ -271,7 +272,7 @@ public class Board extends JPanel {
                     Field localField = arrayBoard[xCoord][yCoord];
 
                     localField.setStandartColor();
-
+                    
                 }
             }
         }
@@ -305,7 +306,7 @@ public class Board extends JPanel {
                         Field field = arrayBoard[xCoord][yCoord];
                         if (figure.isMovePossible(field)) {
                             if (black) {
-                                field.setCheckedByBlack(true); 
+                                field.setCheckedByBlack(true);
                             } else {
                                 field.setCheckedByWhite(true);
                             }
@@ -369,8 +370,27 @@ public class Board extends JPanel {
 
             return true;
         }
+        
+                 
+        private void noOfMoves(){
+            int whiteTurn=noOfMovesWhite;
+            int blackTurn=noOfMovesBlack;
+            System.out.println("Movees function");
+            newFrame(whiteTurn,blackTurn);
+        }
     }
 
+    private void newFrame(int whiteTurn,int blackTurn){
+        
+
+        System.out.println("Function add new frame");
+        movesFrame.setSize(400,400);
+        movesFrame.setVisible(true);
+    }
+    
+    
+    
+    
     public Field[][] getArrayChessBoard() {
         return arrayBoard;
     }
@@ -382,5 +402,5 @@ public class Board extends JPanel {
             System.out.println("It's Black's turn!");
         }
     }
-
 }
+
