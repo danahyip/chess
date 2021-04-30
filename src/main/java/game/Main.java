@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -31,6 +32,7 @@ public class Main extends JFrame {
             this.setLocationRelativeTo( null );
         }
         
+
         public void newGame() throws Exception{
             Main main = new Main();
             main.setVisible(true);
@@ -44,4 +46,6 @@ public class Main extends JFrame {
             
         }
         
+
+}
 }
