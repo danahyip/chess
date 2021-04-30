@@ -28,3 +28,8 @@
 
 @anchor T20_4 \imp \ref US020 Task020.4 - Adding the action listener to initiate new frame.(3 Points)
 
+@anchor T21_1 \imp \ref US021 Task021.1 - Testing the newFrame for the updated functionalities.(3 Points)
+
+@anchor T21_2 \imp \ref US021 Task021.2 - Testing the movecounter function .(5 Points)
+
+@anchor T21_3 \imp \ref US021 Task021.3 - Testing the timer function.(5 Points)
