@@ -22,7 +22,6 @@ public class Main extends JFrame {
             
             /// \ref T7_1 Popup will ask users to choose the number of players
             boolean onePlayer = isOnePlayerGame();
-            
 
             try {
                 this.add( new Board(onePlayer));
