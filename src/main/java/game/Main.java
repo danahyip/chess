@@ -38,12 +38,11 @@ public class Main extends JFrame {
             this.setTitle( "CHESS" );
             this.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
             this.setLocationRelativeTo( null );
-            
         }
         
         /// \ref T7_2 Popup for users to choose number of players 
-        //will return true for One player, false for Two player
-        public boolean isOnePlayerGame() {
+        //will return 1 for One player, 2 for Two player
+        public int getNumberOfPlayers() {
             String[] options = {"1 Player", "2 Players"};
             int playerChoice = JOptionPane.showOptionDialog(null, "Please choose number of Players",
                 "How Many Players?",
@@ -55,7 +54,6 @@ public class Main extends JFrame {
                 return false;
             }
         }
-
     
         public static void main(String[] args) {
             
