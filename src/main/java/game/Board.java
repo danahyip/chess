@@ -46,7 +46,6 @@ public class Board extends JPanel {
     
     Timer timer; /**<Reference variable for timer */
 
-
     public Board() throws IOException {
 
         this.initBoard();
@@ -380,6 +379,7 @@ public class Board extends JPanel {
                 blackTurn = noOfMovesBlack;
                 System.out.println("Total Number of moves by black = "+noOfMovesBlack);
             }
+            System.out.println("Movees function");
             newFrame(whiteTurn,blackTurn);
         }
     }
