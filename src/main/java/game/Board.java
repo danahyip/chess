@@ -35,11 +35,19 @@ public class Board extends JPanel {
     Field collisionField;
 
     private boolean isSelected = false;
-
+    
     JFrame movesFrame = new JFrame("No. of Moves");  /**<New Frame for counter and reset functionality.*/
+    JLabel label = new JLabel(); /**<Label for printing moves counter.*/
+    JButton resetButton=new JButton("Reset"); /**<Reset button object created.*/
+    JLabel timeLabel = new JLabel("Timer"); /**<Label for a timer.*/
+    int r=0; /**<Default data member r for some logic in the code.*/    
+    int second=0; /**<Data member for seconds count. */
+    int minute=30;/**<Data member for minutes count.*/
+    String dfseconds, dfminutes; /**<Data members use for formating.*/
+    
+    Timer timer; /**<Reference variable for timer */
 
-
-    public Board(boolean onePlayer) throws IOException {
+     public Board(boolean onePlayer) throws IOException {
 
         this.onePlayer = onePlayer;
         this.initBoard();
@@ -58,6 +66,7 @@ public class Board extends JPanel {
       if(onePlayer) {
             opponent = new Opponent(arrayBoard);
         }
+
 
         this.setLayout(new java.awt.GridLayout(8, 8));
         boolean black = true;
@@ -260,6 +269,7 @@ public class Board extends JPanel {
                 else {
                     isWhitesTurn = !isWhitesTurn;
                 }
+
             }
         }
 
@@ -371,7 +381,6 @@ public class Board extends JPanel {
             return true;
         }
 
-
         private void noOfMoves(){
             int whiteTurn=noOfMovesWhite;
             int blackTurn=noOfMovesBlack;
@@ -387,9 +396,6 @@ public class Board extends JPanel {
         movesFrame.setSize(400,400);
         movesFrame.setVisible(true);
     }
-
-
-
 
     public Field[][] getArrayChessBoard() {
         return arrayBoard;
