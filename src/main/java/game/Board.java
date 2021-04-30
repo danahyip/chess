@@ -46,7 +46,6 @@ public class Board extends JPanel {
     
     Timer timer; /**<Reference variable for timer */
 
-
     public Board() throws IOException {
 
         this.initBoard();
