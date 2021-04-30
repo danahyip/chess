@@ -20,3 +20,5 @@ US002 - As a player, I would like the ability to change pawns to another piece w
 @anchor US010 US010 - As a player, I would like to see  highlights of the previous move so that I can better keep track of the game.
 
 @anchor US020 US020 - As a player I would like to have a reset button.
+
+@anchor US021 US021 - As a developer, I would like to implement unit tests to test functionalities.
