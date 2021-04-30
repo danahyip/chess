@@ -46,6 +46,9 @@ public class Board extends JPanel {
     
     Timer timer; /**<Reference variable for timer */
     
+
+    
+
     public Board() throws IOException {
 
         this.initBoard();
@@ -167,7 +170,6 @@ public class Board extends JPanel {
          */
         int noOfMovesBlack = 0; /**<Data member to count no. of moves by black.*/
         int noOfMovesWhite = 0; /**<Data member to count no. of moves by white.*/
-         
         public void actionPerformed(java.awt.event.ActionEvent event) {
 
             for (int yCoord = 0; yCoord < arrayBoard.length; yCoord++) {
