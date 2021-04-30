@@ -23,6 +23,7 @@ import javax.swing.JPanel;
 public class Main extends JFrame {
     
         public Main() {
+
             
             /// \ref T7_1 Popup will ask users to choose the number of players
             boolean onePlayer = isOnePlayerGame();
@@ -37,8 +38,7 @@ public class Main extends JFrame {
             this.setResizable(false);
             this.setTitle( "CHESS" );
             this.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
-            this.setLocationRelativeTo( null );
-            
+            this.setLocationRelativeTo( null );            
         }
         
         /// \ref T7_2 Popup for users to choose number of players 
@@ -48,6 +48,7 @@ public class Main extends JFrame {
             int playerChoice = JOptionPane.showOptionDialog(null, "Please choose number of Players",
                 "How Many Players?",
                 JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+
             if (playerChoice == 0) {
                 return true;
             }
@@ -55,7 +56,6 @@ public class Main extends JFrame {
                 return false;
             }
         }
-
     
         public static void main(String[] args) {
             
