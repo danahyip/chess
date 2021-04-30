@@ -413,7 +413,7 @@ public class Board extends JPanel {
                             ++r;
                             if(r==1){
                                 newGameFrame.newGame();
-                                timer.stop();
+                                timer.stop();/* \ref T5_3*/
                                 movesFrame.setVisible(false);
                             }
                         }catch(Exception ex){
@@ -429,13 +429,15 @@ public class Board extends JPanel {
                 movesFrame.add(label);
                 movesFrame.setSize(400,400);
                 movesFrame.setVisible(true);
-                timer();
+                timer();/*\ref T5_2 */
                 timer.start();
             }catch(Exception e){
                 System.out.println("Exception Occured! Something is wrong in new Frame.. "+e.getMessage());
             }
     }
-    
+    /* 
+    \ref T5_1
+    */
     /**
      * This function use to calculate time of the timer.
      * @return void
