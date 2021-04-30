@@ -17,3 +17,5 @@
 @anchor US009 US009 - As a developer, I would like the code to have formatted documentation so that it is easier to maintain.
 
 @anchor US010 US010 - As a player, I would like to see  highlights of the previous move so that I can better keep track of the game.
+
+@anchor US020 US020 - As a player I would like to have a reset button.
