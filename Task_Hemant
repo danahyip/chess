@@ -1,0 +1,35 @@
+@anchor T3_1 \imp \ref US003 Task003.1 - Add a new frame to house the calculator.(Ln 385)(3 Points)
+
+@anchor T3_2 \imp \ref US003 Task003.2 -  Set the counter to 0 and increment the correct counter based on the pawn color. (Board.java Ln 168-169)(3 Points)
+
+@anchor T3_3 \imp \ref US003 Task003.3 - Add a exception handler to prevent game crash.(Ln 426)(5 points)
+
+@anchor T3_4 \imp \ref US003 Task003.4 - Adding frame to house reset and counter functionality.(5 Points)
+
+@anchor T3_5 \imp \ref US003 Task003.5 - Adding the data members to check the correct pawns for move counter.(3 Points)
+
+@anchor T4_1 \imp \ref US004 Task004.1 - Creating parametrized construction taking input from a file.(3 Points)
+
+@anchor T4_2 \imp \ref US004 Task004.2 - Adding the updates icons for pawns, king and queen.(2 Points)
+
+@anchor T5_1 \imp \ref US005 Task005.1 - Created a function for timer functionality that has the decimal format.(5 Points)
+
+@anchor T5_2 \imp \ref US005 Task005.2 - Created a timer box that displays timer in the game frame.(3 Points)
+
+@anchor T5_3 \imp \ref US005 Task005.3 - Adding a function that stops and reset the timer on clicking the reset button.(3 Points)
+
+@anchor T5_4 \imp \ref US005 Task005.4 - New frame function for counter, reset button and timer functionality(5 Points)
+
+@anchor T20_1 \imp \ref US020 Task020.1 - Add a button with text reset. (2 Points)
+
+@anchor T20_2 \imp \ref US020 Task020.2 - On action the button moves the pawns back to their original position and the game restarts.(5 Points)
+
+@anchor T20_3 \imp \ref US020 Task020.3 - Adding a function with exception handler that initiates a new frame.(5 Points)
+
+@anchor T20_4 \imp \ref US020 Task020.4 - Adding the action listener to initiate new frame.(3 Points)
+
+@anchor T21_1 \imp \ref US021 Task021.1 - Testing the newFrame for the updated functionalities.(3 Points)
+
+@anchor T21_2 \imp \ref US021 Task021.2 - Testing the movecounter function .(5 Points)
+
+@anchor T21_3 \imp \ref US021 Task021.3 - Testing the timer function.(5 Points)

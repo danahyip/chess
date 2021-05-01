@@ -18,6 +18,7 @@ public class Bishop extends Figure {
      * @param field to display bishop on a board.
      * Change icons for bishop_black and bishop_white.
      */
+  
     public Bishop(int x, int y, boolean black, Field field) {
         super(x, y, black, field);
         if (black) {

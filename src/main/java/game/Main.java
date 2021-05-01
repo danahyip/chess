@@ -19,27 +19,6 @@ import javax.swing.JLabel;
  */
 public class Main extends JFrame {
         public Main() {
-
-
-            /// \ref T7_1 Popup will ask users to choose the number of players
-            int playerChoice = getNumberOfPlayers();
-            
-            if(playerChoice == 1) {
-                startOnePlayer();
-            }
-            else {
-                startTwoPlayer();
-            }
-            
-        }
-
-        public void startOnePlayer() {
-            System.out.println("TODO");
-            }
-        
-
-        public void startTwoPlayer() {
-
             try {
                 this.add( new Board());
             } catch (IOException ex) {
@@ -53,6 +32,16 @@ public class Main extends JFrame {
             this.setLocationRelativeTo( null );
         }
         
+
+        /** 
+         * This method starts new game.
+         * @return void
+         */
+        public void newGame() throws Exception{
+            Main main = new Main();
+            main.setVisible(true);
+        }
+        
         public static void main(String[] args) {
             EventQueue.invokeLater(() -> {
                 Main main = new Main();
@@ -61,4 +50,6 @@ public class Main extends JFrame {
             
         }
         
+
 }
+

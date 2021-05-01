@@ -1,5 +1,6 @@
 @anchor US001 US001 - As a player, I would like to be able to play against the computer so that I can play when there's nobody else around.
 
+US002 - As a player, I would like the ability to change pawns to another piece when they reach the other side of the board so that the game follows the normal rules of chess.
 @anchor US002 US002 - As a player, I would like the ability to change pawns to another piece when they reach the other side of the board so that the game follows the normal rules of chess.
 
 @anchor US003 US003 - As a player, I would like to see the number of moves I would take in the game.
@@ -19,3 +20,5 @@
 @anchor US010 US010 - As a player, I would like to see  highlights of the previous move so that I can better keep track of the game.
 
 @anchor US020 US020 - As a player I would like to have a reset button.
+
+@anchor US021 US021 - As a developer, I would like to implement unit tests to test functionalities.

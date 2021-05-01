@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['user_20story_20traceability_102',['User Story Traceability',['../implementation.html',1,'']]],
-  ['userstories_103',['UserStories',['../md__user_stories.html',1,'']]],
-  ['userstories_2emd_104',['UserStories.md',['../_user_stories_8md.html',1,'']]]
+  ['timer_92',['timer',['../classgame_1_1_board.html#a2471914a9c08b26c6d501bde92011011',1,'game::Board']]]
 ];

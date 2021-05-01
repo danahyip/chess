@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['moved_214',['moved',['../classgame_1_1_rook.html#aeda3ed6b3d06e894a6471ca0a8b116a3',1,'game::Rook']]]
+  ['oldx_197',['oldX',['../classgame_1_1_figure.html#ad8147c3281ea8a5423cc1f1935447561',1,'game::Figure']]],
+  ['oldy_198',['oldY',['../classgame_1_1_figure.html#a6a70b777670328d7d95d4019c54e2bb7',1,'game::Figure']]]
 ];
